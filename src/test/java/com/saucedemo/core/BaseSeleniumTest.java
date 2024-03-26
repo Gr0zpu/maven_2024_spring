@@ -56,8 +56,10 @@ abstract public class BaseSeleniumTest {
             /* How to enable video recording */
             put("enableVideo", true);
         }});
-         driver = new RemoteWebDriver(new URL("http://172.21.0.3:4444/wd/hub"), options);
-         BaseSeleniumPage.setDriver(driver);
+        driver = new RemoteWebDriver(new URL("http://selenoid:4444/wd/hub"), options);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        BaseSeleniumPage.setDriver(driver);
     }
 
     @AfterTest

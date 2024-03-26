@@ -40,7 +40,7 @@ public class SaucedemoTest extends BaseSeleniumTest {
 
     @Test
     public void logOut() throws InterruptedException {
-        Thread.sleep(600);
+
 
         LoginPage loginPage = new LoginPage().login(ConfigProvider.STANDARD_USER_LOGIN, ConfigProvider.STANDARD_USER_PASSWORD).logout();
         Assert.assertEquals(loginPage.getLoginLogo(), ConfigProvider.LOGIN_PAGE_ID);
