@@ -56,7 +56,7 @@ abstract public class BaseSeleniumTest {
             /* How to enable video recording */
             put("enableVideo", true);
         }});
-         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+         driver = new RemoteWebDriver(new URL("http://172.21.0.3:4444/wd/hub"), options);
          BaseSeleniumPage.setDriver(driver);
     }
 
