@@ -33,7 +33,7 @@ abstract public class BaseSeleniumTest {
 //        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 //        BaseSeleniumPage.setDriver(driver);
 
-        FirefoxOptions options = new FirefoxOptions();
+        ChromeOptions options = new ChromeOptions();
 
 
         options.setCapability("selenoid:options", new HashMap<String, Object>() {{
@@ -64,6 +64,7 @@ abstract public class BaseSeleniumTest {
     public void tearDown(){
 
         driver.close();
+        driver.quit();
 
     }
 }
