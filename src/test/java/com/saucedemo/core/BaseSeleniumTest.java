@@ -26,40 +26,40 @@ abstract public class BaseSeleniumTest {
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
-        WebDriverManager.getInstance(CHROMIUM).setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        BaseSeleniumPage.setDriver(driver);
-
-//        ChromeOptions options = new ChromeOptions();
-//
-//
-//        options.setCapability("selenoid:options", new HashMap<String, Object>() {{
-//            /* How to add test badge */
-//            put("name", "Test badge...");
-//
-//            /* How to set session timeout */
-//            put("sessionTimeout", "15m");
-//
-//            /* How to set timezone */
-//            put("env", new ArrayList<String>() {{
-//                add("TZ=UTC");
-//            }});
-//
-//            /* How to add "trash" button */
-//            put("labels", new HashMap<String, Object>() {{
-//                put("manual", "true");
-//            }});
-//
-//            /* How to enable video recording */
-//            put("enableVideo", true);
-//        }});
-//        driver = new RemoteWebDriver(new URL("http://selenoid:4444/wd/hub"), options);
+//        WebDriverManager.getInstance(CHROMIUM).setup();
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
 //        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 //        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 //        BaseSeleniumPage.setDriver(driver);
+
+        ChromeOptions options = new ChromeOptions();
+
+
+        options.setCapability("selenoid:options", new HashMap<String, Object>() {{
+            /* How to add test badge */
+            put("name", "Test badge...");
+
+            /* How to set session timeout */
+            put("sessionTimeout", "15m");
+
+            /* How to set timezone */
+            put("env", new ArrayList<String>() {{
+                add("TZ=UTC");
+            }});
+
+            /* How to add "trash" button */
+            put("labels", new HashMap<String, Object>() {{
+                put("manual", "true");
+            }});
+
+            /* How to enable video recording */
+            put("enableVideo", true);
+        }});
+        driver = new RemoteWebDriver(new URL("http://selenoid:4444/wd/hub"), options);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        BaseSeleniumPage.setDriver(driver);
     }
 
     @AfterTest
