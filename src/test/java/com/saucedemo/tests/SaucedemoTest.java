@@ -50,7 +50,7 @@ public class SaucedemoTest extends BaseSeleniumTest {
     @Test
     public void login(){
         //InventoryPage inventoryPage = new LoginPage().login(ConfigProvider.STANDARD_USER_LOGIN, ConfigProvider.STANDARD_USER_PASSWORD);
-        InventoryPage inventoryPage = new LoginPage().login(ConfigProvider.STANDARD_USER_LOGIN, "1121fsdf");
+        InventoryPage inventoryPage = new LoginPage().login(ConfigProvider.STANDARD_USER_LOGIN, ConfigProvider.STANDARD_USER_PASSWORD);
         Assert.assertEquals(inventoryPage.getInventoryId(), ConfigProvider.INVENTORY_PAGE_ID);
     }
 
